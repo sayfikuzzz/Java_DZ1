@@ -46,5 +46,21 @@ public class Task1 {
 
         // было: byte java = 'e'
         byte javaByte = 'e';
+
+        System.out.println("words = " + words);
+        System.out.println("g = " + g);
+        System.out.println("q = " + q);
+        System.out.println("k = " + k);
+        System.out.println("f = " + f);
+        System.out.println("value = " + value);
+        System.out.println("m = " + m);
+        System.out.println("value2 = " + value2);
+        System.out.println("caseWord = " + caseWord);
+        System.out.println("h = " + h);
+        System.out.println("intName = " + intName);
+        System.out.println("c = " + c);
+        System.out.println("b = " + b);
+        System.out.println("java = " + java);
+        System.out.println("javaByte = " + javaByte);
     }
 }
