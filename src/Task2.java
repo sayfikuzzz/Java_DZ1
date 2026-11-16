@@ -25,8 +25,8 @@ public class Task2 {
         // поэтому ввод будет происходить на этой же строке.
         System.out.print("Введите значение x: ");
 
-        // Читаем с клавиатуры дробное число и сохраняем его в переменную x.
-        double x = scanner.nextDouble();
+        // Читаем число с клавиатуры с помощью вспомогательного метода readDouble.
+        double x = readDouble(scanner);
 
         // Считаем значение функции по формуле из варианта 10:
         //   x * Math.sqrt(x)  — это x умножить на корень из x;
@@ -39,5 +39,17 @@ public class Task2 {
 
         // Закрываем Scanner, потому что он больше не нужен.
         scanner.close();
+    }
+
+    // Вспомогательный метод: читает строку и превращает её в число double.
+    // Нужен, чтобы дробное число можно было ввести и через запятую, и через точку.
+    private static double readDouble(Scanner scanner) {
+        // nextLine() читает всю строку, введённую пользователем.
+        // trim() убирает пробелы в начале и конце.
+        // replace(',', '.') заменяет запятую на точку.
+        String text = scanner.nextLine().trim().replace(',', '.');
+
+        // Double.parseDouble переводит текст (например, "2.5") в число 2.5.
+        return Double.parseDouble(text);
     }
 }

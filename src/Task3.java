@@ -19,17 +19,17 @@ public class Task3 {
         // Создаём Scanner для чтения данных с клавиатуры.
         Scanner scanner = new Scanner(System.in);
 
-        // Читаем первое число.
+        // Читаем первое число с помощью вспомогательного метода readDouble.
         System.out.print("Введите первое число: ");
-        double a = scanner.nextDouble();
+        double a = readDouble(scanner);
 
         // Читаем второе число.
         System.out.print("Введите второе число: ");
-        double b = scanner.nextDouble();
+        double b = readDouble(scanner);
 
         // Читаем третье число.
         System.out.print("Введите третье число: ");
-        double c = scanner.nextDouble();
+        double c = readDouble(scanner);
 
         // Пока предполагаем, что наименьшее число — это a.
         double min = a;
@@ -53,5 +53,17 @@ public class Task3 {
 
         // Закрываем Scanner.
         scanner.close();
+    }
+
+    // Вспомогательный метод: читает строку и превращает её в число double.
+    // Нужен, чтобы дробное число можно было ввести и через запятую, и через точку.
+    private static double readDouble(Scanner scanner) {
+        // nextLine() читает всю строку, введённую пользователем.
+        // trim() убирает пробелы в начале и конце.
+        // replace(',', '.') заменяет запятую на точку.
+        String text = scanner.nextLine().trim().replace(',', '.');
+
+        // Double.parseDouble переводит текст (например, "2.5") в число 2.5.
+        return Double.parseDouble(text);
     }
 }
